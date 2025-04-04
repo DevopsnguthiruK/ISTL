@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ensure flawless software with ISTL's Quality Assurance as a Service. Comprehensive testing, expert team, and seamless integration for superior performance.">
+    <meta name="keywords" content="quality assurance, QA services, software testing, ISTL solutions, functional testing, performance testing">
+    <meta name="author" content="Innovative Software Technologies Ltd.">
+    <meta name="robots" content="index, follow">
+    <title>Quality Assurance as a Service - ISTL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Dropdown Styles */
+        .dropdown-content {
+            display: none;
+            animation: fadeIn 0.2s ease-out;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+        .category-item { position: relative; }
+        .nested-items {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            min-width: 200px;
+            background-color: rgb(31, 41, 55);
+            border-radius: 0.375rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 50;
+            animation: fadeIn 0.2s ease-out;
+        }
+        .category-item.active .nested-items {
+            display: block;
+        }
+
+        /* General Styles */
+        body {
+            background: linear-gradient(120deg, #f7fafc 0%, #e2e8f0 100%);
+            font-family: 'Poppins', sans-serif;
+            color: #1f2937;
+        }
+        .hero-bg {
+            background: linear-gradient(90deg, #1e3a8a 0%, #60a5fa 100%);
+        }
+        .qa-section {
+            background: url('https://www.transparenttextures.com/patterns/subtle-white-feathers.png'), #f9fafb;
+            background-blend-mode: overlay;
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .why-choose-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .why-choose-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: #3b82f6;
+        }
+        .cta-gradient {
+            background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+        }
+
+        /* Widget Styles */
+        .widget-glow {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.7); }
+            50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.9); }
+            100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.7); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="bg-gray-900 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0">
+                    <img class="h-20 w-auto object-contain" src="Image/ISTL NEW LOGO.png" alt="ISTL Logo">
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="px-3 py-2 text-white font-bold hover:text-blue-300 transition duration-300">Home</a>
+                    <a href="about.html" class="px-3 py-2 text-white font-bold hover:text-blue-300 transition duration-300">About</a>
+                    <!-- Solutions Dropdown -->
+                    <div class="relative dropdown">
+                        <button id="solutionsDropdownBtn" class="px-3 py-2 text-white font-bold flex items-center hover:text-blue-300 transition duration-300">
+                            Solutions
+                            <svg class="ml-2 h-4 w-4 transition-transform duration-200" id="solutionsArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="solutionsDropdown" class="dropdown-content absolute bg-gray-800 shadow-lg rounded-md mt-1 w-72 py-2 z-50">
+                            <div class="category-item">
+                                <button class="category-toggle block w-full text-left px-4 py-3 text-white hover:bg-gray-700 hover:text-blue-300 flex justify-between items-center">
+                                    <span>Regulatory Solutions</span>
+                                    <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                                <div class="nested-items py-2">
+                                    <a href="aml.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-blue-300">AML</a>
+                                    <a href="crs.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-blue-300">CRS</a>
+                                    <a href="fin-report.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-blue-300">Financial Reporting</a>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <button class="category-toggle block w-full text-left px-4 py-3 text-white hover:bg-gray-700 hover:text-blue-300 flex justify-between items-center">
+                                    <span>Cyber Security Solutions</span>
+                                    <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                                <div class="nested-items py-2">
+                                    <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-blue-300">V.A.P.T</a>
+                                    <a href="ssl.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-blue-300">Digital Certificates</a>
+                                    <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-blue-300">API Security</a>
+                                    <a href="siem.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-blue-300">SIEM</a>
+                                </div>
+                            </div>
+                            <a href="qa-testing.html" class="block px-4 py-3 text-white hover:bg-gray-700 hover:text-blue-300">Automated Testing</a>
+                            <a href="middleware.html" class="block px-4 py-3 text-white hover:bg-gray-700 hover:text-blue-300">Middleware</a>
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-gray-700 hover:text-blue-300">Mobile Banking</a>
+                            <a href="kyc.html" class="block px-4 py-3 text-white hover:bg-gray-700 hover:text-blue-300">E-KYC</a>
+                        </div>
+                    </div>
+                    <!-- Services Dropdown -->
+                    <div class="relative dropdown">
+                        <button id="servicesDropdownBtn" class="px-3 py-2 text-white font-bold flex items-center hover:text-blue-300 transition duration-300">
+                            Services
+                            <svg class="ml-2 h-4 w-4 transition-transform duration-200" id="servicesArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="servicesDropdown" class="dropdown-content absolute bg-gray-800 shadow-lg rounded-md mt-1 w-64 py-2">
+                            <a href="outsourcing.html" class="block px-4 py-3 text-white hover:bg-gray-700 hover:text-blue-300">Resource Outsourcing</a>
+                            <a href="qa.html" class="block px-4 py-3 text-white hover:bg-gray-700 hover:text-blue-300">QA Testing</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="px-3 py-2 text-white font-bold hover:text-blue-300 transition duration-300">Contact Us</a>
+                    <a href="aistory.html" class="px-3 py-2 text-white font-bold hover:text-blue-300 transition duration-300">Our AI Story</a>
+                    <a href="customer.html" class="px-3 py-2 text-white font-bold hover:text-blue-300 transition duration-300">Customers</a>
+                    <a href="partner.html" class="px-3 py-2 text-white font-bold hover:text-blue-300 transition duration-300">Partners</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- Hero Section -->
+            <section class="hero-bg text-white py-16 px-4 sm:px-8 rounded-xl">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Quality Assurance, Perfected</h1>
+                        <p class="text-base sm:text-lg mb-6">In a competitive digital world, flawless software is non-negotiable. ISTL’s Quality Assurance as a Service ensures your applications perform seamlessly, delivering exceptional user experiences without draining your resources.</p>
+                        <a href="contact.html" class="inline-block bg-white text-blue-900 font-semibold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">Get Started</a>
+                    </div>
+                    <div class="md:w-1/2 mt-8 md:mt-0">
+                        <img src="Image/qa image.avif" alt="QA Dashboard" class="rounded-lg shadow-2xl w-full max-w-md mx-auto transform hover:scale-105 transition duration-500" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="py-16 qa-section rounded-xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Overcome Software Challenges with Confidence</h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto">Software defects, performance issues, and resource constraints can derail your business. Our QA services turn these challenges into opportunities for excellence.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-lg h-full">
+                        <i class="fas fa-check-circle text-blue-600 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Comprehensive Testing</h3>
+                        <p class="text-gray-600">From functional to security testing, we cover every angle to ensure your software meets the highest standards.</p>
+                    </div>
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-lg h-full">
+                        <i class="fas fa-users text-blue-600 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Expert QA Team</h3>
+                        <p class="text-gray-600">Our skilled engineers and analysts bring years of expertise to catch defects early and optimize performance.</p>
+                    </div>
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-lg h-full">
+                        <i class="fas fa-tachometer-alt text-blue-600 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Performance Validation</h3>
+                        <p class="text-gray-600">Ensure your software runs smoothly under any load with rigorous performance and scalability testing.</p>
+                    </div>
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-lg h-full">
+                        <i class="fas fa-lock text-blue-600 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Security Assurance</h3>
+                        <p class="text-gray-600">Protect your users with thorough security testing to identify and mitigate vulnerabilities.</p>
+                    </div>
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-lg h-full">
+                        <i class="fas fa-mobile-alt text-blue-600 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Compatibility Testing</h3>
+                        <p class="text-gray-600">Deliver a consistent experience across devices, browsers, and platforms with our compatibility checks.</p>
+                    </div>
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-lg h-full">
+                        <i class="fas fa-lightbulb text-blue-600 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Actionable Insights</h3>
+                        <p class="text-gray-600">Get detailed reports and recommendations to improve your software and delight your users.</p>
+                    </div>
+                </div>
+                <!-- BAU vs UAT Subsection -->
+                <div class="mt-12 bg-gray-100 p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold text-center text-gray-800 mb-6">Focus on Business, Not Testing Delays</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="feature-card bg-white p-6 rounded-xl shadow-lg h-full">
+                            <i class="fas fa-clock text-blue-600 text-3xl mb-4"></i>
+                            <h4 class="text-xl font-semibold mb-2">The BAU vs. UAT Challenge</h4>
+                            <p class="text-gray-600">Running daily operations (BAU) while conducting time-intensive User Acceptance Testing (UAT) strains resources...</p>
+                        </div>
+                        <div class="feature-card bg-white p-6 rounded-xl shadow-lg h-full">
+                            <i class="fas fa-users-cog text-blue-600 text-3xl mb-4"></i>
+                            <h4 class="text-xl font-semibold mb-2">Our Solution</h4>
+                            <p class="text-gray-600">Our expert QA team handles UAT, integrating seamlessly with your workflow...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us Section -->
+            <section class="py-16 bg-gray-50 rounded-xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Why Choose ISTL QA Services?</h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto">Delivering quality software shouldn’t compromise your operations. Here’s why ISTL is your trusted QA partner.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="why-choose-card text-center">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Cost-Effective Quality</h3>
+                        <p class="text-gray-600">Catch issues early to avoid expensive fixes later, saving time and resources.</p>
+                    </div>
+                    <div class="why-choose-card text-center">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Scalable Solutions</h3>
+                        <p class="text-gray-600">Adapt our services to your project size and workflow, from startups to enterprises.</p>
+                    </div>
+                    <div class="why-choose-card text-center">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Seamless Integration</h3>
+                        <p class="text-gray-600">We work alongside your team, ensuring testing fits smoothly into your development cycle.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-gradient text-white py-12 px-8 rounded-xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Elevate Your Software Quality</h2>
+                <p class="text-lg mb-6">Ready to deliver flawless software that delights your users? Contact us today to transform your QA process.</p>
+                <a href="contact.html" class="inline-block bg-white text-blue-900 font-semibold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">Contact Us</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Floating Widget -->
+    <div class="fixed right-6 bottom-6 z-50">
+        <button id="widgetToggle" class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 widget-glow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+        </button>
+        <div id="messageBubble" class="hidden mt-2 bg-white rounded-lg shadow-lg max-w-xs w-full transform transition-all duration-300 origin-bottom-right">
+            <div class="p-4 relative">
+                <p class="text-gray-800 text-sm">Contact us today</p>
+                <a href="contact.html" class="font-bold text-blue-600 hover:text-blue-800 transition-colors duration-200">Contact us</a>
+                <button id="closeMessageBtn" class="absolute top-1 right-1 text-gray-400 hover:text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-auto relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- Logo and About -->
+            <div>
+                <img class="h-16 w-auto mb-4" src="Image/ISTL NEW LOGO.png" alt="ISTL Logo" loading="lazy">
+                <p class="text-gray-400">ISTL is a leading Solutions provider that understands, identifies, and meets customers' business needs using Technology, Innovation & Specialized Resources.</p>
+                <div class="flex space-x-4 mt-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">...</svg></a>
+                    <!-- Repeat social icons -->
+                </div>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-semibold mb-6 text-blue-400">Quick Links</h3>
+                <ul class="space-y-3">
+                    <li><a href="aml.html" class="text-gray-400 hover:text-white transition duration-300">Reg-Fusion AML</a></li>
+                    <li><a href="middleware.html" class="text-gray-400 hover:text-white transition duration-300">Middleware</a></li>
+                    <li><a href="aistory.html" class="text-gray-400 hover:text-white transition duration-300">ISTL AI</a></li>
+                    <li><a href="mobile.html" class="text-gray-400 hover:text-white transition duration-300">Mobile Banking</a></li>
+                    <li><a href="crs.html" class="text-gray-400 hover:text-white transition duration-300">CRS</a></li>
+                </ul>
+            </div>
+            <!-- Contact Us -->
+            <div>
+                <h3 class="text-lg font-semibold mb-6 text-blue-400">Contact Us</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start text-gray-400"><svg class="w-5 h-5 mr-3 text-blue-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">...</svg>5th Floor, Fortis Tower, Woodvale Grove, Westlands</li>
+                    <li class="flex items-center text-gray-400"><svg class="w-5 h-5 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">...</svg>0722483121 / 0736442222</li>
+                    <li class="flex items-center text-gray-400"><svg class="w-5 h-5 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">...</svg><a href="mailto:info@istl.co.ke">info@istl.co.ke</a></li>
+                    <li class="flex items-center text-gray-400"><svg class="w-5 h-5 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">...</svg>Mon-Fri: 8:00AM - 5:00PM</li>
+                </ul>
+            </div>
+            <!-- Newsletter -->
+            <div>
+                <h3 class="text-lg font-semibold mb-6 text-blue-400">Newsletter</h3>
+                <p class="text-gray-400 mb-4">Stay updated with our latest news and offers</p>
+                <form class="space-y-3">
+                    <div class="relative">
+                        <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button type="submit" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-400 hover:text-blue-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="newsletter-consent" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="newsletter-consent" class="ml-2 text-sm text-gray-400">I agree to receive newsletters</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="mt-12 text-center text-gray-400 text-sm">© 2025 Innovative Software Technologies Ltd. All rights reserved.</div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleDropdown = (btn, dropdown, arrow) => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isActive = dropdown.parentElement.classList.toggle('active');
+                    arrow.classList.toggle('rotate-180', isActive);
+                });
+            };
+
+            toggleDropdown(
+                document.getElementById('solutionsDropdownBtn'),
+                document.getElementById('solutionsDropdown'),
+                document.getElementById('solutionsArrow')
+            );
+            toggleDropdown(
+                document.getElementById('servicesDropdownBtn'),
+                document.getElementById('servicesDropdown'),
+                document.getElementById('servicesArrow')
+            );
+
+            document.querySelectorAll('.category-toggle').forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const item = toggle.closest('.category-item');
+                    const isActive = item.classList.toggle('active');
+                    toggle.querySelector('svg').classList.toggle('rotate-180', isActive);
+                });
+            });
+
+            const widgetToggle = document.getElementById('widgetToggle');
+            const messageBubble = document.getElementById('messageBubble');
+            const closeMessageBtn = document.getElementById('closeMessageBtn');
+
+            widgetToggle.addEventListener('click', () => {
+                messageBubble.classList.toggle('hidden');
+            });
+
+            closeMessageBtn.addEventListener('click', () => {
+                messageBubble.classList.add('hidden');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.dropdown') && !e.target.closest('.category-item')) {
+                    document.querySelectorAll('.dropdown, .category-item').forEach(el => el.classList.remove('active'));
+                    document.querySelectorAll('.dropdown svg, .category-toggle svg').forEach(svg => svg.classList.remove('rotate-180'));
+                }
+                if (!widgetToggle.contains(e.target) && !messageBubble.contains(e.target)) {
+                    messageBubble.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
